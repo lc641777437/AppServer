@@ -9,7 +9,6 @@ var package = exports;
 
 package.get = function (req, res, next) {
     console.log("GET ", req.url);
-    res.contentType = 'application/vnd.android.package-archive';
 
     var type = req.query.type;
     var selectsql;
@@ -44,7 +43,7 @@ package.get = function (req, res, next) {
             }
             else {
                 res.set({
-                    'Content-Type': 'application/octet-stream',
+                    'Content-Type': 'application/vnd.android.package-archive',
                     'Content-Disposition': 'attachment; filename=package',
                     'Content-Length': stats.size
                 });
