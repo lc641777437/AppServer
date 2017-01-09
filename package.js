@@ -9,7 +9,7 @@ var package = exports;
 
 package.get = function (req, res, next) {
     console.log("GET ", req.url);
-    res.contentType = 'json';
+    res.contentType = 'application/vnd.android.package-archive';
 
     var type = req.query.type;
     var selectsql;
